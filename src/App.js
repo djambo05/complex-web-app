@@ -1,11 +1,9 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-
+import { Header } from "./Header";
 const Step1 = () => <>Step1</>;
 const Step2 = () => <>Step2</>;
 const Step3 = () => <>Step3</>;
 const Result = () => <>Result</>;
-
-const Header = () => <h1>Ultimate React From</h1>;
 
 const router = createBrowserRouter([
   { path: "/", element: <Step1 /> },
