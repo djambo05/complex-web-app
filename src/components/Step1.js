@@ -7,6 +7,7 @@ import { Form } from "./Form";
 import { PrimaryButton } from "./PrimaryButton";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useNavigate } from "react-router-dom";
 
 const schema = yup.object().shape({
   firstName: yup
@@ -20,6 +21,7 @@ const schema = yup.object().shape({
 });
 
 export const Step1 = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -30,6 +32,7 @@ export const Step1 = () => {
   });
   const onSubmit = (data) => {
     console.log(data);
+    navigate("/step2");
   };
   return (
     <MainContainer>
