@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MainContainer } from "./MainContainer";
+import { MainContainer } from "./components/MainContainer";
 import {
   TableCell,
   TableContainer,
@@ -14,13 +14,13 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import { useData } from "../DataContext";
+import { useData } from "./DataContext";
 import { Link } from "react-router-dom";
 import { InsertDriveFile } from "@mui/icons-material";
-import { PrimaryButton } from "./PrimaryButton";
+import { PrimaryButton } from "./components/PrimaryButton";
 import Swal from "sweetalert2";
 import Confetti from "react-confetti";
-import env from "../env";
+import env from "./env";
 
 export const Result = () => {
   const [success, setSuccess] = useState(false);

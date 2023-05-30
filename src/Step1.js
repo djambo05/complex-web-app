@@ -1,14 +1,14 @@
 import React from "react";
-import { MainContainer } from "./MainContainer";
+import { MainContainer } from "./components/MainContainer";
 import { Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
-import { Input } from "./Input";
-import { Form } from "./Form";
-import { PrimaryButton } from "./PrimaryButton";
+import { Input } from "./components/Input";
+import { Form } from "./components/Form";
+import { PrimaryButton } from "./components/PrimaryButton";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router-dom";
-import { useData } from "../DataContext";
+import { useData } from "./DataContext";
 
 const schema = yup.object().shape({
   firstName: yup
