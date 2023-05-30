@@ -6,12 +6,17 @@ import { FileInput } from "./FileInput";
 import { useForm } from "react-hook-form";
 import { PrimaryButton } from "./PrimaryButton";
 import { useNavigate } from "react-router-dom";
+import { useData } from "../DataContext";
 
 export const Step3 = () => {
-  const { control, handleSubmit } = useForm();
+  const { data, setValues } = useData();
+  const { control, handleSubmit } = useForm({
+    defaultValues: { files: data.files },
+  });
   const navigate = useNavigate();
   const onSubmit = (data) => {
     navigate("/result");
+    setValues(data);
   };
 
   return (
