@@ -8,7 +8,7 @@ import { PrimaryButton } from "./components/PrimaryButton";
 import { useNavigate } from "react-router-dom";
 import { useData } from "./DataContext";
 
-export const Step3 = () => {
+const Step3 = () => {
   const { data, setValues } = useData();
   const { control, handleSubmit } = useForm({
     defaultValues: { files: data.files },
@@ -29,3 +29,5 @@ export const Step3 = () => {
     </MainContainer>
   );
 };
+
+export default Step3;

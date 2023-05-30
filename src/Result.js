@@ -21,32 +21,30 @@ import { PrimaryButton } from "./components/PrimaryButton";
 import Swal from "sweetalert2";
 import Confetti from "react-confetti";
 import env from "./env";
+import { CheckButton } from "./components/CheckButton";
 
-export const Result = () => {
-  const [success, setSuccess] = useState(false);
+const Result = () => {
   const { data } = useData();
-  const entries = Object.entries(data).filter((entry) => entry[0] !== "files");
-  console.log(entries);
   const { files } = data;
+  const [success, setSuccess] = useState(false);
+  const entries = Object.entries(data).filter((entry) => entry[0] !== "files");
 
   const onSubmit = async () => {
     const formData = new FormData();
-    console.log(data);
+    const res = await fetch(env.url, {
+      method: "POST",
+      body: formData,
+    });
+
+    entries.forEach((entry) => {
+      formData.append(entry[0], entry[1]);
+    });
 
     if (data.files) {
       data.files.forEach((file) => {
         formData.append("files", file, file.name);
       });
     }
-
-    entries.forEach((entry) => {
-      formData.append(entry[0], entry[1]);
-    });
-
-    const res = await fetch(env.url, {
-      method: "POST",
-      body: formData,
-    });
 
     if (res.status === 200) {
       Swal.fire("Great job", "You've passed the challegne", "success");
@@ -58,22 +56,24 @@ export const Result = () => {
   }
   return (
     <MainContainer>
-      <Typography component="h2" variant="h5">
+      <Typography component="h2" variant="h5" sx={{ marginBottom: "30px" }}>
         Form Values
       </Typography>
       <TableContainer sx={{ marginBottom: "30px" }} component={Paper}>
-        <Table sx={{ marginBottom: "30px" }}>
+        <Table>
           <TableHead>
             <TableRow>
-              <TableCell>Field</TableCell>
-              <TableCell align="right">Value</TableCell>
+              <TableCell sx={{ fontWeight: "bold" }}>Field</TableCell>
+              <TableCell sx={{ fontWeight: "bold" }} align="right">
+                Value
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {entries.map((entry) => (
               <TableRow key={entry[0]}>
                 <TableCell>{entry[0]}</TableCell>
-                <TableCell align="right">{entry[1]}</TableCell>
+                <TableCell align="right">{entry[1] ? entry[1] : "-"}</TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -97,7 +97,13 @@ export const Result = () => {
         </>
       )}
       <PrimaryButton onClick={() => onSubmit()}>Submit</PrimaryButton>
-      <Link to="/">Start Over</Link>
+      <CheckButton>
+        <Link style={{ color: "white", textDecoration: "none" }} to="/">
+          Check Form
+        </Link>
+      </CheckButton>
     </MainContainer>
   );
 };
+
+export default Result;

@@ -1,6 +1,6 @@
 import React from "react";
 import { MainContainer } from "./components/MainContainer";
-import { Typography } from "@mui/material";
+import { Step, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { Input } from "./components/Input";
 import { Form } from "./components/Form";
@@ -21,7 +21,7 @@ const schema = yup.object().shape({
     .required("First name is a required field"),
 });
 
-export const Step1 = () => {
+const Step1 = () => {
   const navigate = useNavigate();
   const { data, setValues } = useData();
   const {
@@ -64,3 +64,5 @@ export const Step1 = () => {
     </MainContainer>
   );
 };
+
+export default Step1;

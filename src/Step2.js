@@ -26,7 +26,7 @@ const normalizePhoneNumber = (value) => {
   return phoneNumber.formatInternational();
 };
 
-export const Step2 = () => {
+const Step2 = () => {
   const { data, setValues } = useData();
   const {
     register,
@@ -89,3 +89,5 @@ export const Step2 = () => {
     </MainContainer>
   );
 };
+
+export default Step2;
