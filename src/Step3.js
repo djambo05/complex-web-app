@@ -1,12 +1,12 @@
 import React from "react";
-import { MainContainer } from "./components/MainContainer";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import { Typography } from "@mui/material";
+import { useData } from "./DataContext";
+import { MainContainer } from "./components/MainContainer";
 import { Form } from "./components/Form";
 import { FileInput } from "./components/FileInput";
-import { useForm } from "react-hook-form";
 import { PrimaryButton } from "./components/PrimaryButton";
-import { useNavigate } from "react-router-dom";
-import { useData } from "./DataContext";
 
 const Step3 = () => {
   const { data, setValues } = useData();

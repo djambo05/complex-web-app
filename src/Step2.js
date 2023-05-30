@@ -1,14 +1,14 @@
 import React from "react";
-import { MainContainer } from "./components/MainContainer";
-import { Checkbox, FormControlLabel, Typography } from "@mui/material";
-import { Form } from "./components/Form";
-import { Input } from "./components/Input";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { PrimaryButton } from "./components/PrimaryButton";
-import * as yup from "yup";
+import { Checkbox, FormControlLabel, Typography } from "@mui/material";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { parsePhoneNumberFromString } from "libphonenumber-js";
+import * as yup from "yup";
+import { MainContainer } from "./components/MainContainer";
+import { Form } from "./components/Form";
+import { Input } from "./components/Input";
+import { PrimaryButton } from "./components/PrimaryButton";
 import { useData } from "./DataContext";
 
 const schema = yup.object().shape({

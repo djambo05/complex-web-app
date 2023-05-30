@@ -1,3 +1,4 @@
+import React from "react";
 import {
   List,
   ListItem,
@@ -5,10 +6,9 @@ import {
   ListItemText,
   Paper,
 } from "@mui/material";
-import React from "react";
+import { CloudUpload, InsertDriveFile } from "@mui/icons-material";
 import Dropzone from "react-dropzone";
 import { Controller } from "react-hook-form";
-import { CloudUpload, InsertDriveFile } from "@mui/icons-material";
 
 export const FileInput = ({ control, name }) => {
   return (
