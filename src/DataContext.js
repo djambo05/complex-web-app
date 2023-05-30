@@ -9,7 +9,7 @@ export const DataProvider = ({ children }) => {
     setData((prevData) => ({ ...prevData, ...values }));
   };
   return (
-    <DataContext.Provider value={(data, setValues)}>
+    <DataContext.Provider value={{ data, setValues }}>
       {children}
     </DataContext.Provider>
   );
