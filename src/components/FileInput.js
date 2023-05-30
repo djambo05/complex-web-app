@@ -21,8 +21,21 @@ export const FileInput = ({ control, name }) => {
           <>
             <Dropzone onDrop={onChange}>
               {({ getRootProps, getInputProps }) => (
-                <Paper variant="outlined" {...getRootProps()}>
-                  <CloudUpload />
+                <Paper
+                  sx={{
+                    backgroundColor: "#eee",
+                    textAlign: "center",
+                    cursor: "pointer",
+                    color: "#333",
+                    padding: "10px",
+                    marginTop: "20px",
+                  }}
+                  variant="outlined"
+                  {...getRootProps()}
+                >
+                  <CloudUpload
+                    sx={{ marginTop: "16px", color: "#888", fontSize: "42px" }}
+                  />
                   <input {...getInputProps()} name={name} onBlur={onBlur} />
                   <p>Drag 'n' drop files here or click to select files</p>
                 </Paper>
