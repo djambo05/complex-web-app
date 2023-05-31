@@ -73,7 +73,9 @@ const Result = () => {
             {entries.map((entry) => (
               <TableRow key={entry[0]}>
                 <TableCell>{entry[0]}</TableCell>
-                <TableCell align="right">{entry[1] ? entry[1] : "-"}</TableCell>
+                <TableCell align="right">
+                  {!!entry[1] ? entry[1] : "-"}
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
