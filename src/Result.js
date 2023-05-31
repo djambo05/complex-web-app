@@ -22,6 +22,7 @@ import { MainContainer } from "./components/MainContainer";
 import { PrimaryButton } from "./components/PrimaryButton";
 import { CheckButton } from "./components/CheckButton";
 import env from "./env";
+import { PATH } from "./App";
 
 const Result = () => {
   const { data } = useData();
@@ -100,7 +101,7 @@ const Result = () => {
       )}
       <PrimaryButton onClick={() => onSubmit()}>Submit</PrimaryButton>
       <CheckButton>
-        <Link style={{ color: "white", textDecoration: "none" }} to="/">
+        <Link style={{ color: "white", textDecoration: "none" }} to={`${PATH}`}>
           Check Form
         </Link>
       </CheckButton>
