@@ -7,7 +7,7 @@ import { MainContainer } from "./components/MainContainer";
 import { Form } from "./components/Form";
 import { FileInput } from "./components/FileInput";
 import { PrimaryButton } from "./components/PrimaryButton";
-
+import { PATH } from "./App";
 const Step3 = () => {
   const { data, setValues } = useData();
   const { control, handleSubmit } = useForm({
@@ -15,7 +15,7 @@ const Step3 = () => {
   });
   const navigate = useNavigate();
   const onSubmit = (data) => {
-    navigate("/result");
+    navigate(`${PATH}/result`);
     setValues(data);
   };
 

@@ -4,7 +4,7 @@ import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
 import Result from "./Result";
-const PATH = "/complex-web-app";
+export const PATH = "/complex-web-app";
 const router = createBrowserRouter([
   { path: `${PATH}/`, element: <Step1 /> },
   { path: `${PATH}/step2`, element: <Step2 /> },

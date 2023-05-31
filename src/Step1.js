@@ -9,7 +9,7 @@ import { useData } from "./DataContext";
 import { Input } from "./components/Input";
 import { Form } from "./components/Form";
 import { PrimaryButton } from "./components/PrimaryButton";
-
+import { PATH } from "./App";
 const schema = yup.object().shape({
   firstName: yup
     .string()
@@ -34,7 +34,7 @@ const Step1 = () => {
     resolver: yupResolver(schema),
   });
   const onSubmit = (data) => {
-    navigate("/step2");
+    navigate(`${PATH}/step2`);
     setValues(data);
   };
   return (

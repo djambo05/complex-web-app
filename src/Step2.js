@@ -10,6 +10,7 @@ import { Form } from "./components/Form";
 import { Input } from "./components/Input";
 import { PrimaryButton } from "./components/PrimaryButton";
 import { useData } from "./DataContext";
+import { PATH } from "./App";
 
 const schema = yup.object().shape({
   email: yup
@@ -45,7 +46,7 @@ const Step2 = () => {
   const hasPhone = watch("hasPhone");
   const navigate = useNavigate();
   const onSubmit = (data) => {
-    navigate("/step3");
+    navigate(`${PATH}/step3`);
     setValues(data);
   };
   return (
