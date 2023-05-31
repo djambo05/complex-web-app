@@ -101,7 +101,10 @@ const Result = () => {
       )}
       <PrimaryButton onClick={() => onSubmit()}>Submit</PrimaryButton>
       <CheckButton>
-        <Link style={{ color: "white", textDecoration: "none" }} to={`${PATH}`}>
+        <Link
+          style={{ color: "white", textDecoration: "none" }}
+          to={`${PATH}/`}
+        >
           Check Form
         </Link>
       </CheckButton>
