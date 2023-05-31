@@ -4,12 +4,12 @@ import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
 import Result from "./Result";
-
+const PATH = "/complex-web-app";
 const router = createBrowserRouter([
-  { path: "/", element: <Step1 /> },
-  { path: "/step2", element: <Step2 /> },
-  { path: "/step3", element: <Step3 /> },
-  { path: "/result", element: <Result /> },
+  { path: `${PATH}/`, element: <Step1 /> },
+  { path: `${PATH}/step2`, element: <Step2 /> },
+  { path: `${PATH}/step3`, element: <Step3 /> },
+  { path: `${PATH}/result`, element: <Result /> },
 ]);
 
 function App() {
